@@ -46,6 +46,6 @@
     <string name="creditos">Copyright © 2022 David Sánchez Belda \ndasanbelda@gmail.com</string>
     <string name="descripcion">PilRem(inder) is an application to remember the follow-up of the medicines. \nIts main objective is to remember the taking of medicines, being able to save in our account all the treatments we want. \nIt is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your choice) any later version.</string>
     <string name="agradecimientos">Thanks to the DAM teachers of IES Camp de Morvedre and my family.</string>
-    <string name="github_link" translatable="false">URL GITHUB</string>
+    <string name="github_link" translatable="false">https://github.com/DSBelda/Pillrem_app</string>
 
 </resources>
