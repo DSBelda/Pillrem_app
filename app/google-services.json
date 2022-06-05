@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "431423496576",
+    "firebase_url": "https://proyectodam-da408-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "proyectodam-da408",
+    "storage_bucket": "proyectodam-da408.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:431423496576:android:06ae03e15c944d4bc96165",
+        "android_client_info": {
+          "package_name": "com.example.proyectodam"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "431423496576-lgv9uednkgtthtpmtd7mnn0i0b602mvo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAgDhru9DBiEC0ssnl5iUypXFVNuWUggDc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "431423496576-lgv9uednkgtthtpmtd7mnn0i0b602mvo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

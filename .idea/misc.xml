@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Proyecto DAM/ProyectoDAM/app/src/main/res/drawable-anydpi-v24/ic_medicine.xml" value="0.192" />
+        <entry key="..\:/Proyecto DAM/ProyectoDAM/app/src/main/res/drawable-anydpi/ic_info.xml" value="0.362" />
+        <entry key="..\:/Proyecto DAM/ProyectoDAM/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.192" />
+        <entry key="..\:/Proyecto DAM/ProyectoDAM/app/src/main/res/drawable/ic_launcher_background.xml" value="0.192" />
+        <entry key="..\:/Proyecto DAM/ProyectoDAM/app/src/main/res/drawable/iconoGoogle_background.xml" value="0.362" />
+        <entry key="..\:/Proyecto DAM/ProyectoDAM/app/src/main/res/drawable/splashscreen.xml" value="0.16" />
+        <entry key="..\:/Proyecto DAM/ProyectoDAM/app/src/main/res/layout/activity_add_medicina.xml" value="0.33" />
+        <entry key="..\:/Proyecto DAM/ProyectoDAM/app/src/main/res/layout/activity_auth.xml" value="0.5" />
+        <entry key="..\:/Proyecto DAM/ProyectoDAM/app/src/main/res/layout/activity_auth_register.xml" value="0.3609375" />
+        <entry key="..\:/Proyecto DAM/ProyectoDAM/app/src/main/res/layout/activity_info.xml" value="0.3609375" />
+        <entry key="..\:/Proyecto DAM/ProyectoDAM/app/src/main/res/layout/activity_main.xml" value="0.33469202898550726" />
+        <entry key="..\:/Proyecto DAM/ProyectoDAM/app/src/main/res/layout/activity_medicina.xml" value="0.33" />
+        <entry key="..\:/Proyecto DAM/ProyectoDAM/app/src/main/res/layout/activity_splash.xml" value="0.3609375" />
+        <entry key="..\:/Proyecto DAM/ProyectoDAM/app/src/main/res/layout/item_medicacion.xml" value="0.35989583333333336" />
+        <entry key="..\:/Proyecto DAM/ProyectoDAM/app/src/main/res/menu/menu.xml" value="0.33" />
+        <entry key="..\:/Proyecto DAM/ProyectoDAM/app/src/main/res/menu/menu_main.xml" value="0.3609375" />
+        <entry key="..\:/Proyecto DAM/ProyectoDAM/app/src/main/res/menu/popup_menu.xml" value="0.3609375" />
+        <entry key="..\:/Proyecto DAM/ProyectoDAM/app/src/main/res/mipmap-anydpi-v26/iconoGoogle.xml" value="0.192" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

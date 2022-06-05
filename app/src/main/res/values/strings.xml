@@ -1,0 +1,51 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">ProyectoDAM</string>
+    <string name="prefs_file" translatable="false">com.example.proyectodam.PREFERENCE_FILE_KEY</string>
+    <string name="Usuario">User</string>
+    <string name="Contraseña">Password</string>
+    <string name="Email">Email</string>
+    <string name="Login">Login</string>
+    <string name="Registrarse">Create an account</string>
+    <string name="Registrarse2">Sign Up</string>
+    <string name="RecuperarContraseña"><u>Forgot Password</u></string>
+    <string name="Edad">Age</string>
+    <string name="Edad2">Your age!</string>
+    <string name="LoginGoogle">Sign in with Google</string>
+    <string name="TextoAñadirMedicaciones">Add medications to your list</string>
+    <string name="TextoNuevaMedicacion">New Medication</string>
+    <string name="add">Add</string>
+    <string name="add_medications">Add medications to your list</string>
+    <string name="addNombreMedicacion">Medication name</string>
+    <string name="addDescripcionMedicina">Description</string>
+    <string name="TextoGuardarMedicina">Add medicine</string>
+    <string name="addRequiereFoto">Require photo proof</string>
+    <string name="addProgramarDosis">select hour</string>
+    <string name="addActivarNotificaciones">Notifications Enabled</string>
+    <string name="take_with_food">Take with food</string>
+    <string name="dose_amount">Dose amount</string>
+    <string name="remaining_doses">Remaining doses</string>
+    <string name="AcaboDeTomarla">I just took it</string>
+    <string name="textoSiguienteDosis">Next dose</string>
+    <string name="textoMedicacionDetalleActivo">Add</string>
+    <string name="textoNotificacionesActivasMedicinaDetalle">Add</string>
+    <string name="cantidadMedicinaDetalle">Add</string>
+    <string name="dosisRestantesMedicinaDetalle">Add</string>
+    <string name="descripcionMedicinaDetalle">Add</string>
+    <string name="eliminarMedicinaDetalle">Delete</string>
+    <string name="logout">Logout</string>
+    <string name="setFecha">Set date</string>
+    <string name="updateMedicina">Update medicine</string>
+    <string name="saveMedicina">Add medicine</string>
+    <string name="fecha">Date</string>
+    <string name="hora">Hour</string>
+    <string name="addProgramarFecha">select date</string>
+    <string name="StopAlarm">You took this already</string>
+    <string name="EliminarTodos">Delete all medicines</string>
+    <string name="info">Info</string>
+    <string name="verEnGitHub">view it on Github</string>
+    <string name="creditos">Copyright © 2022 David Sánchez Belda \ndasanbelda@gmail.com</string>
+    <string name="descripcion">PilRem(inder) is an application to remember the follow-up of the medicines. \nIts main objective is to remember the taking of medicines, being able to save in our account all the treatments we want. \nIt is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your choice) any later version.</string>
+    <string name="agradecimientos">Thanks to the DAM teachers of IES Camp de Morvedre and my family.</string>
+    <string name="github_link" translatable="false">URL GITHUB</string>
+
+</resources>
