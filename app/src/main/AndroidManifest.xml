@@ -14,22 +14,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProyectoDAM">
         <activity
-            android:name="com.dsbelda.proyectodam.activities.MainActivity"
+            android:name="my.dsbelda.proyectodam.activities.MainActivity"
             android:exported="false" />
         <activity
-            android:name="com.dsbelda.proyectodam.activities.RegisterActivity"
+            android:name="my.dsbelda.proyectodam.activities.RegisterActivity"
             android:exported="false" />
         <activity
-            android:name="com.dsbelda.proyectodam.activities.AddMedicinaActivity"
+            android:name="my.dsbelda.proyectodam.activities.AddMedicinaActivity"
             android:exported="false" />
         <activity
-            android:name="com.dsbelda.proyectodam.activities.MedicinaDetalleActivity"
+            android:name="my.dsbelda.proyectodam.activities.MedicinaDetalleActivity"
             android:exported="false" />
         <activity
-            android:name="com.dsbelda.proyectodam.activities.InfoActivity"
+            android:name="my.dsbelda.proyectodam.activities.InfoActivity"
             android:exported="false" />
         <activity
-            android:name="com.dsbelda.proyectodam.activities.AuthActivity"
+            android:name="my.dsbelda.proyectodam.activities.AuthActivity"
             android:exported="true"
             android:theme="@style/SplashTheme">
 
@@ -40,13 +40,13 @@
         </activity>
 
         <service
-            android:name="com.dsbelda.proyectodam.services.MedicacionService"
+            android:name="my.dsbelda.proyectodam.services.MedicacionService"
             android:enabled="true"
             android:exported="false"
             android:process=":MedicacionServiceProcess" />
 
         <receiver
-            android:name="com.dsbelda.proyectodam.services.AlarmReceiver"
+            android:name="my.dsbelda.proyectodam.services.AlarmReceiver"
             android:enabled="true"
             android:label="AlarmReceiver" />
         <meta-data
