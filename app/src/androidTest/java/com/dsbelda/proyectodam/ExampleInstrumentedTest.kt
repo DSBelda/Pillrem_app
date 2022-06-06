@@ -1,4 +1,4 @@
-package com.example.proyectodam
+package com.dsbelda.proyectodam
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

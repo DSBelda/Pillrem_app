@@ -1,4 +1,4 @@
-package com.example.proyectodam.services
+package com.dsbelda.proyectodam.services
 
 import android.content.BroadcastReceiver
 import android.content.Context

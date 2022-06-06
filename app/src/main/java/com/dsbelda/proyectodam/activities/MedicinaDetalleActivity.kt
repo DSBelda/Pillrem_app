@@ -1,9 +1,9 @@
-package com.example.proyectodam.activities
+package com.dsbelda.proyectodam.activities
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.proyectodam.R
-import com.example.proyectodam.models.Medicacion
+import com.dsbelda.proyectodam.models.Medicacion
 import kotlinx.android.synthetic.main.activity_medicina.*
 
 class MedicinaDetalleActivity : AppCompatActivity() {

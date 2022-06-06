@@ -1,4 +1,4 @@
-package com.example.proyectodam.activities
+package com.dsbelda.proyectodam.activities
 
 import android.content.Intent
 import android.os.Bundle

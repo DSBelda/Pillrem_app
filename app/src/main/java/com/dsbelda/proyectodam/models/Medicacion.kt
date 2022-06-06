@@ -1,4 +1,4 @@
-package com.example.proyectodam.models
+package com.dsbelda.proyectodam.models
 
 import android.media.MediaSession2Service
 import java.io.Serializable

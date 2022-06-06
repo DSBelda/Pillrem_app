@@ -1,4 +1,4 @@
-package com.example.proyectodam.adapters
+package com.dsbelda.proyectodam.adapters
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -8,9 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.proyectodam.R
-import com.example.proyectodam.activities.MainActivity
-import com.example.proyectodam.models.Medicacion
-import com.example.proyectodam.utils.Util
+import com.dsbelda.proyectodam.activities.MainActivity
+import com.dsbelda.proyectodam.models.Medicacion
+import com.dsbelda.proyectodam.utils.Util
 import kotlinx.android.synthetic.main.item_medicacion.view.*
 
 class MedicacionAdapter(private val itemClick: OnItemClickListener) :

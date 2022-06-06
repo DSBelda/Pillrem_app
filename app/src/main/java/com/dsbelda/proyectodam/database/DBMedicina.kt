@@ -1,4 +1,4 @@
-package com.example.proyectodam.database
+package com.dsbelda.proyectodam.database
 
 import android.content.ContentValues
 import android.content.Context
@@ -12,8 +12,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.core.app.ApplicationProvider.getApplicationContext
 import com.example.proyectodam.R
-import com.example.proyectodam.activities.MainActivity
-import com.example.proyectodam.models.Medicacion
+import com.dsbelda.proyectodam.activities.MainActivity
+import com.dsbelda.proyectodam.models.Medicacion
 
 
 class DBMedicina(context: Context) :

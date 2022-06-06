@@ -1,4 +1,4 @@
-package com.example.proyectodam.activities
+package com.dsbelda.proyectodam.activities
 
 import android.app.AlarmManager
 import android.app.PendingIntent
@@ -13,13 +13,13 @@ import android.view.View
 import android.widget.PopupMenu
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import com.example.proyectodam.models.Medicacion
-import com.example.proyectodam.adapters.MedicacionAdapter
+import com.dsbelda.proyectodam.models.Medicacion
+import com.dsbelda.proyectodam.adapters.MedicacionAdapter
 import com.example.proyectodam.R
-import com.example.proyectodam.database.DBMedicina
-import com.example.proyectodam.services.AlarmReceiver
-import com.example.proyectodam.services.MedicacionService
-import com.example.proyectodam.utils.Util
+import com.dsbelda.proyectodam.database.DBMedicina
+import com.dsbelda.proyectodam.services.AlarmReceiver
+import com.dsbelda.proyectodam.services.MedicacionService
+import com.dsbelda.proyectodam.utils.Util
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_main.*
 

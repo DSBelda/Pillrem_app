@@ -1,4 +1,4 @@
-package com.example.proyectodam.fragments
+package com.dsbelda.proyectodam.fragments
 
 import android.content.Context
 import android.os.Bundle
@@ -8,8 +8,8 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.DialogFragment
 import com.example.proyectodam.R
-import com.example.proyectodam.activities.AuthActivity
-import com.example.proyectodam.activities.ProviderType
+import com.dsbelda.proyectodam.activities.AuthActivity
+import com.dsbelda.proyectodam.activities.ProviderType
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.fragment_new_pass.*
 import kotlinx.android.synthetic.main.fragment_new_pass.view.*

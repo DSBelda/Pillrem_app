@@ -1,4 +1,4 @@
-package com.example.proyectodam.activities
+package com.dsbelda.proyectodam.activities
 
 import android.annotation.SuppressLint
 import android.app.*
@@ -9,11 +9,11 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.example.proyectodam.R
-import com.example.proyectodam.database.DBMedicina
-import com.example.proyectodam.models.Medicacion
-import com.example.proyectodam.services.AlarmReceiver
-import com.example.proyectodam.services.MedicacionService
-import com.example.proyectodam.utils.Util
+import com.dsbelda.proyectodam.database.DBMedicina
+import com.dsbelda.proyectodam.models.Medicacion
+import com.dsbelda.proyectodam.services.AlarmReceiver
+import com.dsbelda.proyectodam.services.MedicacionService
+import com.dsbelda.proyectodam.utils.Util
 import kotlinx.android.synthetic.main.activity_add_medicina.*
 import kotlinx.coroutines.NonCancellable.cancel
 import java.util.*

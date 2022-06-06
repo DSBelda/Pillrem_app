@@ -1,4 +1,4 @@
-package com.example.proyectodam.services
+package com.dsbelda.proyectodam.services
 
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -13,9 +13,9 @@ import android.speech.tts.TextToSpeech
 import android.util.Log
 import androidx.core.app.NotificationCompat
 import com.example.proyectodam.R
-import com.example.proyectodam.activities.MainActivity
-import com.example.proyectodam.database.DBMedicina
-import com.example.proyectodam.models.Medicacion
+import com.dsbelda.proyectodam.activities.MainActivity
+import com.dsbelda.proyectodam.database.DBMedicina
+import com.dsbelda.proyectodam.models.Medicacion
 import java.util.*
 
 

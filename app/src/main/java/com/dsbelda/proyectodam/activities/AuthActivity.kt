@@ -1,4 +1,4 @@
-package com.example.proyectodam.activities
+package com.dsbelda.proyectodam.activities
 
 import android.content.Context
 import android.content.Intent
@@ -9,7 +9,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.example.proyectodam.R
-import com.example.proyectodam.fragments.RecuperarContraseñaFragment
+import com.dsbelda.proyectodam.fragments.RecuperarContraseñaFragment
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
