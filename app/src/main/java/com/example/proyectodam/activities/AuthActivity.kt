@@ -6,8 +6,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.example.proyectodam.R
+import com.example.proyectodam.fragments.RecuperarContraseñaFragment
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
@@ -43,10 +45,6 @@ class AuthActivity : AppCompatActivity() {
         val prefs = getSharedPreferences(getString(R.string.prefs_file), Context.MODE_PRIVATE)
         val email = prefs.getString("email", null)
         val provider = prefs.getString("provider", null)
-
-        Log.d("Login", "$email and $provider")
-
-
         if(email != null && provider != null) {
             linearLayoutAuth.visibility = View.INVISIBLE
             showMain(email, ProviderType.valueOf(provider))
@@ -89,6 +87,13 @@ class AuthActivity : AppCompatActivity() {
             googleClient.signOut()
 
             startActivityForResult(googleClient.signInIntent, GOOGLE_SIGN_IN)
+
+        }
+
+        bRecuperarPass.setOnClickListener(){
+            var dialog = RecuperarContraseñaFragment()
+
+            dialog.show(supportFragmentManager, "RecuperarContraseña")
 
         }
     }

@@ -107,9 +107,9 @@ class AddMedicinaActivity : AppCompatActivity() {
 
         bAddAñadirMedicamento.setOnClickListener {
             if (etAddNombre.text?.isEmpty() == true) {
-                Util.showToastMessage(this, "Please select title")
+                Util.showToastMessage(this, "Porfavor introduce un nombre")
             } else if (lbHoraAddMedicacion.text == getString(R.string.hora)) {
-                Util.showToastMessage(this, "Please select time")
+                Util.showToastMessage(this, "Please selecciona la hora")
             } else {
                 val nombre = etAddNombre.text.toString()
                 val prefs = getSharedPreferences(getString(R.string.prefs_file), Context.MODE_PRIVATE)
@@ -130,7 +130,6 @@ class AddMedicinaActivity : AppCompatActivity() {
 
                 val guardarMedicacionId: Long
                 guardarMedicacionId = if (medicinaGuardada.id != 0L) {
-                    Log.d("Medicina", "Modificando")
                     medicacion.id = medicinaGuardada.id
                     db.updateMedicacion(medicacion)
                     medicinaGuardada.id
@@ -138,12 +137,9 @@ class AddMedicinaActivity : AppCompatActivity() {
                     db.guardarMedicina(medicacion)
                 }
                 if (guardarMedicacionId != 0L) {
-                    Log.d("Medicina", "Modificando Alarma")
-                    Log.d("AlarmTime", "Hora: $hora")
-                    Log.d("AlarmTime", "Min: $minuto")
                     setMedicineAlarm(guardarMedicacionId)
                 } else {
-                    Util.showToastMessage(this, "Failed to save medicine")
+                    Util.showToastMessage(this, "Error guardando la medicina")
                 }
             }
         }
@@ -172,7 +168,6 @@ class AddMedicinaActivity : AppCompatActivity() {
             PendingIntent.getBroadcast(this, guardarMedicacionId.toInt(), medicacionRecieverIntent, PendingIntent.FLAG_MUTABLE) //Pending.Intent.FLAG_MUTABLE corrige errores en android 12
 
         val formattedDate = Util.getFormattedDateInString(myCalendar.timeInMillis, "dd/MM/YYYY HH:mm")
-        Log.d("TimeSetInMillis:", formattedDate)
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             alarmManager.setAndAllowWhileIdle(
@@ -182,7 +177,7 @@ class AddMedicinaActivity : AppCompatActivity() {
             alarmManager.set(AlarmManager.RTC_WAKEUP, myCalendar.timeInMillis, pendingIntent)
         }
 
-        Util.showToastMessage(this, "Alarm is set at : $formattedDate")
+        Util.showToastMessage(this, "Alarma configurada a las: $formattedDate")
         finish()
     }
 

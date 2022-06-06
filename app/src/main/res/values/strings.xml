@@ -7,12 +7,17 @@
     <string name="Login">Login</string>
     <string name="Registrarse">Create an account</string>
     <string name="Registrarse2">Sign Up</string>
+    <string name="PassNoCoinciden">Password does not match</string>
+    <string name="recuperarContraseñaTexto">Enter your email</string>
+    <string name="RepetirContraseña">Repeat pass</string>
     <string name="RecuperarContraseña"><u>Forgot Password</u></string>
     <string name="Edad">Age</string>
     <string name="Edad2">Your age!</string>
     <string name="LoginGoogle">Sign in with Google</string>
     <string name="TextoAñadirMedicaciones">Add medications to your list</string>
     <string name="TextoNuevaMedicacion">New Medication</string>
+    <string name="CambiarContraseña">Change pass</string>
+    <string name="cancelar">Cancel</string>
     <string name="add">Add</string>
     <string name="add_medications">Add medications to your list</string>
     <string name="addNombreMedicacion">Medication name</string>

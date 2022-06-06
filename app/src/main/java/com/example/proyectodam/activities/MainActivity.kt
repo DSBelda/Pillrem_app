@@ -48,7 +48,6 @@ class MainActivity : AppCompatActivity(), MedicacionAdapter.OnItemClickListener 
 
         // GUARDADO DATOS LOGIN
         if (email != null) {
-            Log.d("Login", "$email and $provider")
             Login(email, provider)
         }
 
@@ -69,7 +68,6 @@ class MainActivity : AppCompatActivity(), MedicacionAdapter.OnItemClickListener 
             val prefs = getSharedPreferences(getString(R.string.prefs_file), Context.MODE_PRIVATE)
             val email = prefs.getString("email", null)
             val medicinaId = intent.getLongExtra("medicacionId", 0)
-            Log.d("prueba", "Medicacion ID recibida $medicinaId")
             val medicinaById = db.getMedicinaById(medicinaId, email.toString())
             showMedicinaAlert(medicinaById)
         }
@@ -90,12 +88,6 @@ class MainActivity : AppCompatActivity(), MedicacionAdapter.OnItemClickListener 
 
                 FirebaseAuth.getInstance().signOut()
                 onBackPressed()
-            }
-            R.id.itemBarBorrarTodo -> {
-                db = DBMedicina(this)
-                val prefs = getSharedPreferences(getString(R.string.prefs_file), Context.MODE_PRIVATE)
-                val emailPrefs = prefs.getString("email", null)
-                db.deleteAll(emailPrefs.toString())
             }
             R.id.itemBarInfoApp -> {
                 val intent = Intent(this, InfoActivity::class.java)
@@ -153,10 +145,10 @@ class MainActivity : AppCompatActivity(), MedicacionAdapter.OnItemClickListener 
 
     private fun showMedicinaAlert(medicacion: Medicacion) {
         val builder = AlertDialog.Builder(this)
-        builder.setTitle(medicacion.nombre)
-        builder.setMessage(medicacion.descripcion)
+        builder.setTitle("ALARMA SONANDO!")
+        builder.setMessage("Te has tomado la medicina?")
         builder.setPositiveButton(R.string.StopAlarm) { dialog, _ ->
-            Util.showToastMessage(this, "Your alarm has been stopped")
+            Util.showToastMessage(this, "Tu alarma se ha parado")
             dialog.dismiss()
             stopAlarm()
             stopMedicinaService()

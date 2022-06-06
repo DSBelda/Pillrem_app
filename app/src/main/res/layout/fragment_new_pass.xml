@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="402dp"
+        android:layout_height="448dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20sp"
+            android:text="@string/RecuperarContraseña"
+            android:textAlignment="center"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="89dp"
+            android:layout_marginStart="15sp"
+            android:text="@string/recuperarContraseñaTexto"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/editTextTextEmailAddress"
+            android:layout_width="match_parent"
+            android:layout_height="107dp"
+            android:layout_marginStart="15sp"
+            android:ems="10"
+            android:hint="pillrem@dsbelda.es"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/teal_700"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="60sp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/fragmenCancel"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="30sp"
+                android:backgroundTint="@color/red"
+                android:text="@string/cancelar"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/fragmentChange"
+                android:layout_width="141dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="70sp"
+                android:text="@string/CambiarContraseña"
+                android:textAlignment="center"
+                android:textSize="15sp" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

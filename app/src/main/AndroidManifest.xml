@@ -8,9 +8,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_pastilla_layer"
+        android:icon="@mipmap/ic_logoapp_final_foreground"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_pastilla_layer"
+        android:roundIcon="@mipmap/ic_logoapp_final_foreground"
         android:supportsRtl="true"
         android:theme="@style/Theme.ProyectoDAM">
         <activity

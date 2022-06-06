@@ -7,6 +7,8 @@
         <entry key="..\:/Proyecto DAM/ProyectoDAM/app/src/main/res/drawable-anydpi/ic_info.xml" value="0.362" />
         <entry key="..\:/Proyecto DAM/ProyectoDAM/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.192" />
         <entry key="..\:/Proyecto DAM/ProyectoDAM/app/src/main/res/drawable/ic_launcher_background.xml" value="0.192" />
+        <entry key="..\:/Proyecto DAM/ProyectoDAM/app/src/main/res/drawable/ic_logoApp_background.xml" value="0.362" />
+        <entry key="..\:/Proyecto DAM/ProyectoDAM/app/src/main/res/drawable/ic_logoapp_final_background.xml" value="0.195" />
         <entry key="..\:/Proyecto DAM/ProyectoDAM/app/src/main/res/drawable/iconoGoogle_background.xml" value="0.362" />
         <entry key="..\:/Proyecto DAM/ProyectoDAM/app/src/main/res/drawable/splashscreen.xml" value="0.16" />
         <entry key="..\:/Proyecto DAM/ProyectoDAM/app/src/main/res/layout/activity_add_medicina.xml" value="0.33" />
@@ -16,10 +18,12 @@
         <entry key="..\:/Proyecto DAM/ProyectoDAM/app/src/main/res/layout/activity_main.xml" value="0.33469202898550726" />
         <entry key="..\:/Proyecto DAM/ProyectoDAM/app/src/main/res/layout/activity_medicina.xml" value="0.33" />
         <entry key="..\:/Proyecto DAM/ProyectoDAM/app/src/main/res/layout/activity_splash.xml" value="0.3609375" />
+        <entry key="..\:/Proyecto DAM/ProyectoDAM/app/src/main/res/layout/fragment_new_pass.xml" value="0.22" />
         <entry key="..\:/Proyecto DAM/ProyectoDAM/app/src/main/res/layout/item_medicacion.xml" value="0.35989583333333336" />
         <entry key="..\:/Proyecto DAM/ProyectoDAM/app/src/main/res/menu/menu.xml" value="0.33" />
         <entry key="..\:/Proyecto DAM/ProyectoDAM/app/src/main/res/menu/menu_main.xml" value="0.3609375" />
         <entry key="..\:/Proyecto DAM/ProyectoDAM/app/src/main/res/menu/popup_menu.xml" value="0.3609375" />
+        <entry key="..\:/Proyecto DAM/ProyectoDAM/app/src/main/res/mipmap-anydpi-v26/ic_logoApp.xml" value="0.195" />
         <entry key="..\:/Proyecto DAM/ProyectoDAM/app/src/main/res/mipmap-anydpi-v26/iconoGoogle.xml" value="0.192" />
       </map>
     </option>

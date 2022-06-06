@@ -6,7 +6,12 @@
     <string name="Login">Identificarse</string>
     <string name="Registrarse">Crear una cuenta</string>
     <string name="Registrarse2">Registrarse</string>
+    <string name="RepetirContraseña">Repetir contraseña</string>
+    <string name="PassNoCoinciden">Contraseñas no coinciden</string>
     <string name="RecuperarContraseña"><u>Recuperar Contraseña</u></string>
+    <string name="recuperarContraseñaTexto">Introduce tu email</string>
+    <string name="CambiarContraseña">Cambiar contraseña</string>
+    <string name="cancelar">Cancelar</string>
     <string name="Edad">Edad</string>
     <string name="Edad2">Tu edad!</string>
     <string name="LoginGoogle">Acceder con Google</string>

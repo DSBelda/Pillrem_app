@@ -26,27 +26,18 @@ class MedicacionService  : Service() {
 
     override fun onCreate() {
         super.onCreate()
-        Log.d("MedicacionService", "onCreate called")
-        // enable to play a custom ring tone
-        /*mediaPlayer = MediaPlayer.create(this, R.raw.alarm_ringtone)
-        mediaPlayer?.isLooping = true
-        mediaPlayer?.start()*/
     }
 
     override fun onBind(intent: Intent?): IBinder? {
-        Log.d("MedicacionService", "onBind called")
         return null
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
-        Log.d("MedicacionService", "onStartCommand called")
         val medicacionId = intent?.getLongExtra("medicacionId", 0)
         val db = DBMedicina(this)
         val prefs = getSharedPreferences(getString(R.string.prefs_file), Context.MODE_PRIVATE)
         val email = prefs.getString("email", null)
         val medicacion = db.getMedicinaById(medicacionId ?: 0, email.toString())
-        Log.d("prueba", "Medicacion enviada $medicacion")
-        Log.d("prueba", "Medicacion enviada con ID ${medicacion.id}")
         showAlarmNotification(medicacion)
         val current = resources.configuration.locale
         val speakText = medicacion.nombre + " " + medicacion.cantidad + " " + medicacion.descripcion
@@ -59,18 +50,15 @@ class MedicacionService  : Service() {
                     Log.d("MedicacionService", "Error: $it")
                 }
             })
-        Log.d("MedicacionService", speakText)
         return START_STICKY
     }
 
     private fun showAlarmNotification(medicacion: Medicacion) {
-        Log.d("MedicacionService", "showAlarmNotification called")
-        Log.d("prueba", "show Alarm llega  ${medicacion.id}")
         createNotificationChannel(medicacion.id.toInt())
         val textoNotificacion = medicacion.cantidad + " - " + medicacion.descripcion
         // build notification
         val builder = NotificationCompat.Builder(this, medicacion.id.toString())
-            .setSmallIcon(R.drawable.ic_logo_medicina) //set icon for notification
+            .setSmallIcon(R.drawable.ic_imagennotificacion) //set icon for notification
             .setContentTitle(medicacion.nombre) //set title of notification
             .setContentText(textoNotificacion)//this is notification message
             .setAutoCancel(true) // makes auto cancel of notification
@@ -107,7 +95,6 @@ class MedicacionService  : Service() {
     }
 
     override fun onDestroy() {
-        Log.d("MedicacionService", "onDestroy called")
         super.onDestroy()
 
         if (mediaPlayer?.isPlaying == true) {

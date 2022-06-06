@@ -73,13 +73,10 @@ class DBMedicina(context: Context) :
     fun getMedicinaById(medicacionId: Long, emailPref: String): Medicacion {
         val medicacion = Medicacion()
         val db = this.readableDatabase
-        Log.d("prueba", "Email que llega $emailPref")
         val query = "SELECT * FROM $TABLE_MEDICACIONES WHERE $ID = '$medicacionId' AND $EMAIL = '$emailPref'"
-        Log.d("prueba", "Query que llega $query")
         val cursor = db.rawQuery(query, null)
         if (cursor.count < 1) {
             cursor.close()
-            Log.d("prueba", "Medicacion que llega $medicacion")
             return medicacion
         } else {
             cursor.moveToFirst()
@@ -141,15 +138,10 @@ class DBMedicina(context: Context) :
     }
 
     //method to delete data
-    fun deleteAll(emailPref: String): Int {
-        val db = this.writableDatabase
-        val contentValues = ContentValues()
-        contentValues.put(EMAIL, emailPref) // EmpModelClass UserId
-        // Deleting Row
-        val rowId = db.delete(TABLE_MEDICACIONES, "$EMAIL=$emailPref", null)
-        //2nd argument is String containing nullColumnHack
-        db.close() // Closing database connection
-        return rowId
+    fun deleteAll(emailPref: String){
+        val db = this.readableDatabase
+        val sql = ("DELETE * from $TABLE_MEDICACIONES WHERE $EMAIL = " + emailPref + " ORDER BY $FECHA_MODIFICACION DESC")
+        db?.execSQL(sql)
     }
 
     fun getAll(emailPref: String): MutableList<Medicacion> {

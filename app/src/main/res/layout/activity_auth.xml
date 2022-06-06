@@ -53,7 +53,7 @@
             android:minHeight="60dp" />
 
         <Button
-            android:id="@+id/bRememberPass"
+            android:id="@+id/bRecuperarPass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/transparent"

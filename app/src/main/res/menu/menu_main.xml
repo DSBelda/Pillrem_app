@@ -7,10 +7,7 @@
         android:icon="@drawable/ic_info"
         android:title="@string/info"
         app:showAsAction="ifRoom" />
-    <item
-        android:id="@+id/itemBarBorrarTodo"
-        android:title="@string/EliminarTodos"
-        app:showAsAction="never" />
+
     <item
         android:id="@+id/itemBarLogout"
         android:icon="@drawable/ic_logout"
