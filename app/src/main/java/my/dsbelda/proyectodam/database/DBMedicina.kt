@@ -17,6 +17,7 @@ import my.dsbelda.proyectodam.models.Medicacion
 
 
 class DBMedicina(context: Context) :
+
     SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
     companion object {
         private const val DATABASE_VERSION = 1
@@ -33,6 +34,9 @@ class DBMedicina(context: Context) :
         private const val FECHA_MODIFICACION = "fechaModificacion"
     }
 
+    /**
+     * Al iniciarse crea la tabla
+     */
     override fun onCreate(db: SQLiteDatabase?) {
         val createTable = ("CREATE TABLE " + TABLE_MEDICACIONES + "("
                 + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
@@ -47,11 +51,17 @@ class DBMedicina(context: Context) :
         db?.execSQL(createTable)
     }
 
+    /**
+     * Al inciarse, borra la tabla en caso de que exista
+     */
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
         db?.execSQL("DROP TABLE IF EXISTS $TABLE_MEDICACIONES")
         onCreate(db)
     }
 
+    /**
+     * Guarda en la base de datos desde el objeto Medicina
+     */
     fun guardarMedicina(medicacion: Medicacion): Long {
         val db = this.writableDatabase
         val contentValues = ContentValues()
@@ -63,13 +73,14 @@ class DBMedicina(context: Context) :
         contentValues.put(FECHA, medicacion.fecha)
         contentValues.put(FECHA_CREACION, System.currentTimeMillis())
         contentValues.put(FECHA_MODIFICACION, System.currentTimeMillis())
-        // Inserting Row
         val success = db.insert(TABLE_MEDICACIONES, null, contentValues)
-        //2nd argument is String containing nullColumnHack
-        db.close() // Closing database connection
+        db.close()
         return success
     }
 
+    /**
+     * Obtienes la medicina por el id (solo si pertenece al usuario)
+     */
     fun getMedicinaById(medicacionId: Long, emailPref: String): Medicacion {
         val medicacion = Medicacion()
         val db = this.readableDatabase
@@ -106,7 +117,9 @@ class DBMedicina(context: Context) :
         return medicacion
     }
 
-    //method to update data
+    /**
+     * Actualiza los datos del item
+     */
     fun updateMedicacion(medicacion: Medicacion): Int {
         val db = this.writableDatabase
         val contentValues = ContentValues()
@@ -118,32 +131,26 @@ class DBMedicina(context: Context) :
         contentValues.put(FECHA_CREACION, medicacion.fechaCreacion)
         contentValues.put(FECHA_MODIFICACION, System.currentTimeMillis())
 
-        // Updating Row
         val success = db.update(TABLE_MEDICACIONES, contentValues, "$ID=" + medicacion.id, null)
-        //2nd argument is String containing nullColumnHack
-        db.close() // Closing database connection
+        db.close()
         return success
     }
 
-    //method to delete data
+    /**
+     * Borra el item de la base de datos y actualiza la lista
+     */
     fun deleteMedicacionById(id: Long): Int {
         val db = this.writableDatabase
         val contentValues = ContentValues()
-        contentValues.put(ID, id) // EmpModelClass UserId
-        // Deleting Row
+        contentValues.put(ID, id)
         val rowId = db.delete(TABLE_MEDICACIONES, "$ID=$id", null)
-        //2nd argument is String containing nullColumnHack
-        db.close() // Closing database connection
+        db.close()
         return rowId
     }
 
-    //method to delete data
-    fun deleteAll(emailPref: String){
-        val db = this.readableDatabase
-        val sql = ("DELETE * from $TABLE_MEDICACIONES WHERE $EMAIL = " + emailPref + " ORDER BY $FECHA_MODIFICACION DESC")
-        db?.execSQL(sql)
-    }
-
+    /**
+     * Obtiene mediante una consulta todos los registros del usuario logueado
+     */
     fun getAll(emailPref: String): MutableList<Medicacion> {
         val db = this.readableDatabase
         val cursor = db.rawQuery("select * from $TABLE_MEDICACIONES WHERE $EMAIL = '$emailPref' ORDER BY $FECHA_MODIFICACION DESC", null)

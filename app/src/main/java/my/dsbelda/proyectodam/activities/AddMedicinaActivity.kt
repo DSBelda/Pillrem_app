@@ -21,7 +21,6 @@ import java.util.*
 
 class AddMedicinaActivity : AppCompatActivity() {
 
-
     private lateinit var alarmManager: AlarmManager
     private lateinit var db: DBMedicina
     private val myCalendar = Calendar.getInstance()
@@ -40,43 +39,37 @@ class AddMedicinaActivity : AppCompatActivity() {
             medicinaGuardada = intent.getSerializableExtra("medicina") as Medicacion
         }
 
-        fecha = DatePickerDialog.OnDateSetListener { _, year, monthOfYear, dayOfMonth ->
-            myCalendar.set(Calendar.YEAR, year)
-            myCalendar.set(Calendar.MONTH, monthOfYear)
-            myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth)
-            updateDate()
-        }
-
         if (medicinaGuardada.id != 0L) {
             etAddNombre.setText(medicinaGuardada.nombre)
             etAddCantidad.setText(medicinaGuardada.cantidad)
             etAddDescripcion.setText(medicinaGuardada.descripcion)
             lbFechaMedicacion.text = medicinaGuardada.fecha
             lbHoraAddMedicacion.text = medicinaGuardada.hora
-
             val split = medicinaGuardada.fecha.split("/")
             val dia = split[0]
             val mes = split[1]
             val ano = split[2]
-
             val split1 = medicinaGuardada.hora.split(":")
             val hora = split1[0]
             val minuto = split1[1]
-
             myCalendar.set(Calendar.YEAR, ano.toInt())
             myCalendar.set(Calendar.MONTH, mes.toInt())
             myCalendar.set(Calendar.DAY_OF_MONTH, dia.toInt())
-
             myCalendar.set(Calendar.HOUR_OF_DAY, hora.toInt())
             myCalendar.set(Calendar.MINUTE, minuto.toInt())
             myCalendar.set(Calendar.SECOND, 0)
-
             bAddAñadirMedicamento.text = getString(R.string.updateMedicina)
         } else {
             updateDate()
             bAddAñadirMedicamento.text = getString(R.string.saveMedicina)
         }
 
+        fecha = DatePickerDialog.OnDateSetListener { _, year, monthOfYear, dayOfMonth ->
+            myCalendar.set(Calendar.YEAR, year)
+            myCalendar.set(Calendar.MONTH, monthOfYear)
+            myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth)
+            updateDate()
+        }
         bAddFechaMedicacion.setOnClickListener {
             val datePickerDialog = DatePickerDialog(
                 this, fecha, myCalendar.get(Calendar.YEAR),
@@ -105,6 +98,9 @@ class AddMedicinaActivity : AppCompatActivity() {
             timePickerDialog.show()
         }
 
+        /**
+         * Añade medaicmento con un on click listener
+         */
         bAddAñadirMedicamento.setOnClickListener {
             if (etAddNombre.text?.isEmpty() == true) {
                 Util.showToastMessage(this, "Porfavor introduce un nombre")
@@ -145,11 +141,17 @@ class AddMedicinaActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * Actualiza la fecha
+     */
     private fun updateDate() {
         val formattedDate = Util.getFormattedDateInString(myCalendar.timeInMillis, "dd/MM/YYYY")
         lbFechaMedicacion.text = formattedDate
     }
 
+    /**
+     * Actualiza la hora
+     */
     @SuppressLint("SetTextI18n")
     private fun updateTime(hora: Int, minuto: Int) {
         this.hora = hora
@@ -157,6 +159,9 @@ class AddMedicinaActivity : AppCompatActivity() {
         lbHoraAddMedicacion.text = "$hora:"+checkDigit(minuto)
     }
 
+    /**
+     * Establece la alarma recibiendo la id de la medicacion guardada
+     */
     private fun setMedicineAlarm(guardarMedicacionId: Long) {
         alarmManager = getSystemService(Context.ALARM_SERVICE) as AlarmManager
         val medicacionService = MedicacionService()
@@ -181,19 +186,23 @@ class AddMedicinaActivity : AppCompatActivity() {
         finish()
     }
 
+    /**
+     * Comprueba  que el Service esta ejecutandose en segundo plano
+     */
     @Suppress("DEPRECATION")
     private fun isServiceRunning(medicacionService: MedicacionService): Boolean {
         val manager = getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
         for (service in manager.getRunningServices(Integer.MAX_VALUE)) {
             if (medicacionService.javaClass.name == service.service.className) {
-                Log.i("isMyServiceRunning?", true.toString() + "")
                 return true
             }
         }
-        Log.i("isMyServiceRunning?", false.toString() + "")
         return false
     }
 
+    /**
+     * Se utiliza para darle formato a la fecha
+     */
     fun checkDigit(number: Int): String? {
         return if (number <= 9) "0$number" else number.toString()
     }

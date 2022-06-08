@@ -3,6 +3,9 @@ package my.dsbelda.proyectodam.models
 import android.media.MediaSession2Service
 import java.io.Serializable
 
+/**
+ * Crea el modelo de medicacion
+ */
 class Medicacion (
     var id: Long =0,
     var email: String = "",

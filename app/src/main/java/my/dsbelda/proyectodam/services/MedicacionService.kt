@@ -32,6 +32,9 @@ class MedicacionService  : Service() {
         return null
     }
 
+    /**
+     * Cuando se le llama establece conexiones con la base de datos y genera el audio de lectura del texto
+     */
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         val medicacionId = intent?.getLongExtra("medicacionId", 0)
         val db = DBMedicina(this)
@@ -53,17 +56,18 @@ class MedicacionService  : Service() {
         return START_STICKY
     }
 
+    /**
+     * Muestra la notificacion cuando ha llegado a la hora establecida
+     */
     private fun showAlarmNotification(medicacion: Medicacion) {
         createNotificationChannel(medicacion.id.toInt())
         val textoNotificacion = medicacion.cantidad + " - " + medicacion.descripcion
-        // build notification
         val builder = NotificationCompat.Builder(this, medicacion.id.toString())
-            .setSmallIcon(R.drawable.ic_imagennotificacion) //set icon for notification
-            .setContentTitle(medicacion.nombre) //set title of notification
-            .setContentText(textoNotificacion)//this is notification message
-            .setAutoCancel(true) // makes auto cancel of notification
-            .setPriority(NotificationCompat.PRIORITY_HIGH) //set priority of notification
-
+            .setSmallIcon(R.drawable.ic_imagennotificacion)
+            .setContentTitle(medicacion.nombre)
+            .setContentText(textoNotificacion)
+            .setAutoCancel(true)
+            .setPriority(NotificationCompat.PRIORITY_HIGH)
         val notificationIntent = Intent(applicationContext, MainActivity::class.java)
         notificationIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         //notification message will get at NotificationView
@@ -76,12 +80,13 @@ class MedicacionService  : Service() {
         )
         builder.setContentIntent(pendingIntent)
         val notification = builder.build()
-
-        // Add as notification
         val manager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         manager.notify(medicacion.id.toInt(), notification)
     }
 
+    /**
+     * Crea el canal necesario para las notificaciones
+     */
     private fun createNotificationChannel(id: Int) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val serviceChannel = NotificationChannel(
@@ -94,6 +99,9 @@ class MedicacionService  : Service() {
         }
     }
 
+    /**
+     * Cuando se quita la notificacion se para el audio
+     */
     override fun onDestroy() {
         super.onDestroy()
 
@@ -101,7 +109,6 @@ class MedicacionService  : Service() {
             mediaPlayer?.stop()
             mediaPlayer?.release()
         }
-
         tts?.stop()
         tts?.shutdown()
     }

@@ -26,7 +26,6 @@ class RecuperarContraseñaFragment : DialogFragment() {
         rootView.fragmenCancel.setOnClickListener(){
             dismiss()
         }
-
         rootView.fragmentChange.setOnClickListener(){
             if(editTextTextEmailAddress.text.isNotEmpty()){
                 resetPassword()
@@ -35,10 +34,12 @@ class RecuperarContraseñaFragment : DialogFragment() {
                 editTextTextEmailAddress.setText("${editTextTextEmailAddress.text} CAMPO VACIO")
             }
         }
-
         return rootView
     }
 
+    /**
+     * Mediante Firebase envia un correo electronico de recuperacion de contraseña
+     */
     private fun resetPassword(){
         FirebaseAuth.getInstance().sendPasswordResetEmail(editTextTextEmailAddress.text.toString()).addOnCompleteListener(){
             if (it.isSuccessful) {

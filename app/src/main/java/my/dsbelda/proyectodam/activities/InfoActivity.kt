@@ -13,6 +13,9 @@ class InfoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_info)
 
+        /**
+         * Listener que te lleva al link del repositorio en github
+         */
         bVerEnGithub.setOnClickListener {
             val webpage = Uri.parse(getString(R.string.github_link))
             val intent = Intent(Intent.ACTION_VIEW, webpage)

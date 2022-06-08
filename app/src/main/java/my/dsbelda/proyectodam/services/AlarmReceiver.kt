@@ -6,6 +6,9 @@ import android.content.Intent
 
 class AlarmReceiver: BroadcastReceiver() {
 
+    /**
+     * Al inicializarse inicia el service para activar las alarmas
+     */
     override fun onReceive(context: Context, intent: Intent?) {
 
         val medicacionId = intent?.getLongExtra("medicacionId", 0)

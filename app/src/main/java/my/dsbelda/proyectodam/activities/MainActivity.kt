@@ -23,7 +23,9 @@ import my.dsbelda.proyectodam.utils.Util
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_main.*
 
-
+/**
+ * Enumeramos los providers posibles de la aplicacion
+ */
 enum class ProviderType{
     BASIC,
     GOOGLE
@@ -38,7 +40,9 @@ class MainActivity : AppCompatActivity(), MedicacionAdapter.OnItemClickListener 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
+        /**
+         * Recibe mediante un intent el email y provider del registro
+         */
         val bundle = intent.extras
         val email = bundle?.getString("email")
         val provider = bundle?.getString("provider")
@@ -51,6 +55,9 @@ class MainActivity : AppCompatActivity(), MedicacionAdapter.OnItemClickListener 
             Login(email, provider)
         }
 
+        /**
+         * Instanciamos la base de datos y el adapatdor para actualizar la lista
+         */
         db = DBMedicina(this)
         adapter = MedicacionAdapter(this)
         recycler_view_medicinas.adapter = adapter
@@ -62,7 +69,9 @@ class MainActivity : AppCompatActivity(), MedicacionAdapter.OnItemClickListener 
             startActivity(intent)
         }
 
-
+        /**
+         * Recibe la pulsacion de la notifiacion y muestra una alerta
+         */
         val from = intent.getStringExtra("from")
         if (from == "Notification") {
             val prefs = getSharedPreferences(getString(R.string.prefs_file), Context.MODE_PRIVATE)
@@ -74,11 +83,17 @@ class MainActivity : AppCompatActivity(), MedicacionAdapter.OnItemClickListener 
 
     }
 
+    /**
+     * Muestra la toolbar personalizada en la vista principal
+     */
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
         return super.onCreateOptionsMenu(menu)
     }
 
+    /**
+     *  listeners de los botones de la Tool Bar
+     */
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId){
             R.id.itemBarLogout -> {
@@ -97,6 +112,9 @@ class MainActivity : AppCompatActivity(), MedicacionAdapter.OnItemClickListener 
         return super.onOptionsItemSelected(item)
     }
 
+    /**
+     * Da titulo a la vista y listener de añadir medicina
+     */
     private fun setup() {
         title = "Lista de medicaciones"
 
@@ -105,6 +123,9 @@ class MainActivity : AppCompatActivity(), MedicacionAdapter.OnItemClickListener 
         }
     }
 
+    /**
+     * Guarda los datos del login en preferencias global
+     */
     private fun Login(email: String, provider: String?) {
         val prefs = getSharedPreferences(getString(R.string.prefs_file), Context.MODE_PRIVATE).edit()
         prefs.putString("email", email)
@@ -112,11 +133,17 @@ class MainActivity : AppCompatActivity(), MedicacionAdapter.OnItemClickListener 
         prefs.apply()
     }
 
+    /**
+     * Abre la vista de añadir o editar medicina
+     */
     private fun showAñadirMedicina() {
         val intent = Intent(this, AddMedicinaActivity::class.java)
         startActivity(intent)
     }
 
+    /**
+     * Actualiza la recycler list recibiendo la mutable list con los datos cargados desde la BD
+     */
     private fun updateList(finalList: MutableList<Medicacion>) {
         adapter.medicacionList = finalList
         adapter.notifyDataSetChanged()
@@ -131,6 +158,9 @@ class MainActivity : AppCompatActivity(), MedicacionAdapter.OnItemClickListener 
         }
     }
 
+    /**
+     * Obtiene todas las medicinas ligadas al usuario desde la BD
+     */
     private fun getAllMedicinasDB() {
         val prefs = getSharedPreferences(getString(R.string.prefs_file), Context.MODE_PRIVATE)
         val email = prefs.getString("email", null)
@@ -138,11 +168,17 @@ class MainActivity : AppCompatActivity(), MedicacionAdapter.OnItemClickListener 
         updateList(medicacionList)
     }
 
+    /**
+     * Cuando incia la vista se ejecuta
+     */
     override fun onResume() {
         super.onResume()
         getAllMedicinasDB()
     }
 
+    /**
+     * Abre un modal cuando pulsas la notifcacion de la alarma
+     */
     private fun showMedicinaAlert(medicacion: Medicacion) {
         val builder = AlertDialog.Builder(this)
         builder.setTitle("ALARMA SONANDO!")
@@ -158,6 +194,9 @@ class MainActivity : AppCompatActivity(), MedicacionAdapter.OnItemClickListener 
         alertDialog.show()
     }
 
+    /**
+     * Permite para la alarma activa, desactivandola del segundo plano
+     */
     private fun stopAlarm() {
         val intent = Intent(this, AlarmReceiver::class.java)
         val sender = PendingIntent.getBroadcast(this, 0, intent, PendingIntent.FLAG_IMMUTABLE)
@@ -165,11 +204,18 @@ class MainActivity : AppCompatActivity(), MedicacionAdapter.OnItemClickListener 
         alarmManager.cancel(sender)
     }
 
+    /**
+     * Para el service en segundo plano
+     */
     private fun stopMedicinaService() {
         val medicinaService = Intent(this, MedicacionService::class.java)
         stopService(medicinaService)
     }
 
+
+    /**
+     * Listeners de los botones de cada item
+     */
     override fun onItemClick(
         medicina: Medicacion,
         view: View,

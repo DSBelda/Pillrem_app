@@ -23,9 +23,6 @@
             android:name="my.dsbelda.proyectodam.activities.AddMedicinaActivity"
             android:exported="false" />
         <activity
-            android:name="my.dsbelda.proyectodam.activities.MedicinaDetalleActivity"
-            android:exported="false" />
-        <activity
             android:name="my.dsbelda.proyectodam.activities.InfoActivity"
             android:exported="false" />
         <activity

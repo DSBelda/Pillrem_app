@@ -21,10 +21,16 @@ class RegisterActivity : AppCompatActivity() {
         setup()
     }
 
+    /**
+     * Inicializa el registro
+     */
     private fun setup(){
 
-        title = "Sign Up"
+        title = "Registrarse"
 
+        /**
+         * Cuando se pulsa el boton de registor comprueba que los campos tienen el formato deseado
+         */
         bRegister.setOnClickListener {
             if(etRegisterMail.text.isNotEmpty() && etRegisterPass.text.isNotEmpty()
                 && etRegisterPass2.text.isNotEmpty()) {
@@ -44,21 +50,25 @@ class RegisterActivity : AppCompatActivity() {
             }
         }
     }
-
+    /**
+     * Comprueba que las dos contraseñas son iguales
+     */
     private fun isSameKey(): Boolean {
         var samekeyok = false
        if (etRegisterPass.text.toString() == etRegisterPass2.text.toString()) {
              samekeyok = true
      } else {
             samekeyok = false
-            Toast.makeText(this, "Pass doesn't match", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Contraseñas no coinciden", Toast.LENGTH_SHORT).show()
         }
 
 
         return samekeyok
     }
 
-
+    /**
+     * Muestra una alerta de error
+     */
     private fun showAlert() {
         val builder = AlertDialog.Builder(this)
         builder.setTitle("ERROR")
@@ -68,6 +78,9 @@ class RegisterActivity : AppCompatActivity() {
         dialog.show()
     }
 
+    /**
+     * Funcion que hace un intent al login
+     */
     private fun showLogin(email:String, provider: ProviderType) {
         val intent = Intent(this, AuthActivity::class.java).apply {
             putExtra("email", email)

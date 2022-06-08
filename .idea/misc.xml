@@ -3,7 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Proyecto DAM/Pillrem/app/src/main/res/layout/activity_add_medicina.xml" value="0.3609375" />
+        <entry key="..\:/Proyecto DAM/Pillrem/app/src/main/res/drawable/splashscreen.xml" value="0.1725" />
+        <entry key="..\:/Proyecto DAM/Pillrem/app/src/main/res/layout/activity_add_medicina.xml" value="0.25" />
+        <entry key="..\:/Proyecto DAM/Pillrem/app/src/main/res/layout/activity_auth.xml" value="0.25" />
+        <entry key="..\:/Proyecto DAM/Pillrem/app/src/main/res/layout/activity_auth_register.xml" value="0.25" />
+        <entry key="..\:/Proyecto DAM/Pillrem/app/src/main/res/layout/activity_info.xml" value="0.25" />
+        <entry key="..\:/Proyecto DAM/Pillrem/app/src/main/res/layout/activity_main.xml" value="0.1956521739130435" />
+        <entry key="..\:/Proyecto DAM/Pillrem/app/src/main/res/layout/activity_medicina.xml" value="0.25" />
+        <entry key="..\:/Proyecto DAM/Pillrem/app/src/main/res/layout/activity_splash.xml" value="0.1956521739130435" />
+        <entry key="..\:/Proyecto DAM/Pillrem/app/src/main/res/layout/fragment_new_pass.xml" value="0.33" />
+        <entry key="..\:/Proyecto DAM/Pillrem/app/src/main/res/layout/item_medicacion.xml" value="0.33" />
         <entry key="..\:/Proyecto DAM/ProyectoDAM/app/src/main/res/drawable-anydpi-v24/ic_medicine.xml" value="0.192" />
         <entry key="..\:/Proyecto DAM/ProyectoDAM/app/src/main/res/drawable-anydpi/ic_info.xml" value="0.362" />
         <entry key="..\:/Proyecto DAM/ProyectoDAM/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.192" />

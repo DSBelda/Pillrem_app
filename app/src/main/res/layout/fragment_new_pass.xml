@@ -42,6 +42,7 @@
             android:hint="pillrem@dsbelda.es"
             android:inputType="textEmailAddress"
             android:textColor="@color/teal_700"
+            android:textColorHint="#78909C"
             android:textSize="20sp" />
 
         <LinearLayout

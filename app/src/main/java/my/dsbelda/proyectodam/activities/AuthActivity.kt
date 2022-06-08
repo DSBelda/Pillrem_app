@@ -36,11 +36,17 @@ class AuthActivity : AppCompatActivity() {
         session()
     }
 
+    /**
+     * Si no te has logueado se hace visible la vista
+     */
     override fun onStart() {
         super.onStart()
         linearLayoutAuth.visibility = View.VISIBLE
     }
 
+    /**
+     * Guarda en las preferencias globales en login
+     */
     private fun session() {
         val prefs = getSharedPreferences(getString(R.string.prefs_file), Context.MODE_PRIVATE)
         val email = prefs.getString("email", null)
@@ -50,14 +56,24 @@ class AuthActivity : AppCompatActivity() {
             showMain(email, ProviderType.valueOf(provider))
         }
     }
+
+    /**
+     * Establece los parametros iniciales de la vista y los listeners correspondientes
+     */
     private fun setup() {
         title = "Autenticacion"
 
+        /**
+         * Realiza un intent a la vista de el registro
+         */
         bRegister.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
         }
 
+        /**
+         * Comprueba los datos y realiza el login si es correcto
+         */
         bLogin.setOnClickListener {
             if (etLoginMail.text.isNotEmpty() && etLoginPass.text.isNotEmpty()) {
 
@@ -74,6 +90,10 @@ class AuthActivity : AppCompatActivity() {
                 }
             }
         }
+
+        /**
+         * Realiza el login mediante la cuenta de google de tu dispositivo
+         */
         bLoginGoogle.setOnClickListener {
 
             //Configuración google
@@ -90,6 +110,9 @@ class AuthActivity : AppCompatActivity() {
 
         }
 
+        /**
+         * Abre el modal para enviar un correo de recuperacion de contraseña
+         */
         bRecuperarPass.setOnClickListener(){
             var dialog = RecuperarContraseñaFragment()
 
@@ -98,7 +121,9 @@ class AuthActivity : AppCompatActivity() {
         }
     }
 
-
+    /**
+     * Funcion que permite ir a la vista principal
+     */
     private fun showMain(email: String, provider: ProviderType) {
         val intent = Intent(this, MainActivity::class.java).apply {
             putExtra("email", email)
@@ -107,6 +132,9 @@ class AuthActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
+    /**
+     * Funcion que muestra una alerta de error
+     */
     private fun showAlert() {
         val builder = AlertDialog.Builder(this)
         builder.setTitle("ERROR")
@@ -116,6 +144,9 @@ class AuthActivity : AppCompatActivity() {
         dialog.show()
     }
 
+    /**
+     * Se ejecuta para ejecutar las tareas correspondientes al login de Google
+     */
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
